@@ -441,7 +441,7 @@ margin: 10px;
     }
     .navbar-lastitems{
         font-size: 14px;
-         width: 30%; 
+         /* width: 30%;  */
     }
     .navbar .navbar-options{
         font-size: 12px;
