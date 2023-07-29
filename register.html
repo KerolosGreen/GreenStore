@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://kit.fontawesome.com/64cc13dfa7.js" crossorigin="anonymous"></script>
+    <link href="https://fastly.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./Style.css" rel="StyleSheet">
+    <title>Register</title>
+</head>
+<body>
+<div class="navbar">
+
+    <div class="navbar-hero">
+        <a href="./index.html">
+            <p>
+                
+                Green.
+            </p>
+        </a>
+    </div>
+    <div class="navbar-lastitems">
+        <!-- <i class="fa-solid fa-user"></i> -->
+        Products
+    </div>
+    <div class="navbar-options">
+        <!-- <i class="fa-solid fa-user"></i> -->
+        Contact Us
+    </div>
+</div> 
+
+<div class="login-container">
+    <div class="login-container-webtitle">Green.</div>
+    <div class="login-container-title">Create Your Account</div>
+    <div class="login-container-login-inputs">
+        <form method="POST" name="register-form" class="login-form" onsubmit="return validateForm()">
+        
+        <input type="text" class="form-control m-2" name="register-name" id="exampleFormControlInput1" placeholder="Your Full Name">
+        <p id="register-name-error" class="mx-2" style="color: red; margin: 0;text-align: center;display: none;">Enter Your Name Please</p>
+
+        <input type="text" class="form-control m-2" name="register-email" id="exampleFormControlInput1" placeholder="Email">
+        <p id="register-email-error" class="mx-2" style="color: red; margin: 0;text-align: center;display: none;">Enter Your Email Please</p>
+
+        <input type="Password" class="form-control m-2" name="register-password" id="exampleFormControlInput1" placeholder="Password">
+        <p id="register-password-error" class="mx-2" style="color: red; margin: 0;text-align: center;display: none;">Enter Your Password Please</p>
+
+        <input type="text" class="form-control m-2" name="register-phonenumber" id="exampleFormControlInput1" placeholder="Phone Number">
+        <p id="register-phonenumber-error" class="mx-2" style="color: red; margin: 0;text-align: center;display: none;">Enter Your Phone Number Please</p>
+
+        <div class="w-75 mx-auto"><button type="submit" class="form-control btn btn-dark m-2 w-100">Login</button></div>
+        </form>
+        <!-- <input type="text" name="" placeholder="Email">
+        <input type="Password" name="" placeholder="Password"> -->
+        <p class="m-2" style="text-align: center;">Already Have An Account? <a href="./login.html">Login</a></p>
+    </div>
+    
+</div>
+
+<footer style="position: absolute;bottom: 0px;">
+        <p>Green. © 2023</p>
+</footer>
+</body>
+<script>
+    function validateForm() {
+    let entered_email = document.forms["register-form"]["register-email"].value;
+    let entered_password = document.forms["register-form"]["register-password"].value;
+    let entered_name = document.forms["register-form"]["register-name"].value;
+    let entered_phonenumber = document.forms["register-form"]["register-phonenumber"].value;
+
+    if(entered_email=="" ||  entered_password=="" || entered_name=="" || entered_phonenumber==""){
+        if(entered_email==""){
+        document.forms["register-form"]["register-email"].style.boxShadow ="0px 0px 0px 1px red"; 
+        
+        document.getElementById("register-email-error").style.display="block";
+        }
+        else{
+        document.forms["register-form"]["register-email"].style.boxShadow ="0px 0px 0px 1px transparent"; 
+        
+        document.getElementById("register-email-error").style.display="none";
+        }
+        if(entered_password==""){
+         
+        document.forms["register-form"]["register-password"].style.boxShadow = "0px 0px 0px 1px red";
+        
+        document.getElementById("register-password-error").style.display="block";
+        
+        }
+        else{
+        document.forms["register-form"]["register-password"].style.boxShadow = "0px 0px 0px 1px transparent";
+        
+        document.getElementById("register-password-error").style.display="none"; 
+        }
+        if(entered_name==""){
+       
+        document.forms["register-form"]["register-name"].style.boxShadow ="0px 0px 0px 1px red"; 
+        
+        document.getElementById("register-name-error").style.display="block";
+        
+        }
+        else{
+        document.forms["register-form"]["register-name"].style.boxShadow ="0px 0px 0px 1px transparent"; 
+        
+        document.getElementById("register-name-error").style.display="none";
+        }
+        if(entered_phonenumber==""){
+        
+        document.forms["register-form"]["register-phonenumber"].style.boxShadow = "0px 0px 0px 1px red";
+        
+        document.getElementById("register-phonenumber-error").style.display="block";
+        }
+        else{
+        document.forms["register-form"]["register-phonenumber"].style.boxShadow = "0px 0px 0px 1px transparent";
+        
+        document.getElementById("register-phonenumber-error").style.display="none";
+    }
+        return false
+    }
+}
+    
+
+</script>
+</html>
